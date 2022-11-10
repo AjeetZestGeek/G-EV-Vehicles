@@ -75,9 +75,9 @@ class userConfig
 
 	public function insertData(){
 		try{
-			$stm = $this->con->prepare("INSERT INTO users(phone,username,email,password,status)VALUES(?,?,?,?,?,?,?)");
+			$stm = $this->con->prepare("INSERT INTO users(phone,username,email,password,status)VALUES(?,?,?,?,?)");
 			$stm->execute([$this->phone,$this->username,$this->email,$this->password,$this->status]);
-			echo "<script>alert('Data saved successfully');document.location = 'allData.php'</script>";
+			echo "<script>alert('Data saved successfully');document.location = 'userlist.php'</script>";
 		}
 		catch(Exception $e){
 			return $e->getMessage();
@@ -108,9 +108,9 @@ class userConfig
 
 	public function update(){
 		try{
-			$stm = $this->con->prepare("UPDATE users set username = ?, email = ?, WHERE id = ?");
-			$stm->execute([$this->username,$this->email,$this->id]);
-			echo "<script>alert('Data updated successfully');document.location = 'allData.php'</script>";
+			$stm = $this->con->prepare("UPDATE users set username = ?, email = ?,phone = ? WHERE id = ?");
+			$stm->execute([$this->username,$this->email,$this->phone,$this->id]);
+			echo "<script>alert('Data updated successfully');document.location = 'userlist.php'</script>";
 		}
 		catch(Exception $e){
 			return $e->getMessage();
@@ -122,7 +122,7 @@ class userConfig
 			$stm = $this->con->prepare("DELETE  FROM users WHERE id = ?");
 			$stm->execute([$this->id]);
 			return $stm->fetchAll();
-			echo "<script>alert('Data deleted successfully');document.location = 'allData.php'</script>";
+			echo "<script>alert('Data deleted successfully');document.location = 'userlist.php'</script>";
 		}
 		catch(Exception $e){
 			return $e->getMessage();

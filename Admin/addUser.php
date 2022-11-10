@@ -7,21 +7,15 @@
   <h2><?php if(isset($_GET['id'])){ echo 'Update User';}else{echo 'Add User';}?></h2>
   <form class="form-horizontal" action="" method="post">
     <div class="form-group">
-      <label class="control-label col-sm-2" for="name">Name:</label>
+      <label class="control-label col-sm-2" for="username">Name:</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" id="name" placeholder="Enter name" name="name" value="<?=isset($data['name'])?$data['name']:'';?>">
+        <input type="text" class="form-control" id="username" placeholder="Enter user name" name="username" value="<?=isset($data['username'])?$data['username']:'';?>">
       </div>
     </div>
     <div class="form-group">
-      <label class="control-label col-sm-2" for="program">Program:</label>
+      <label class="control-label col-sm-2" for="phone">Phone:</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" id="program" placeholder="Enter program" name="program" value="<?=isset($data['program'])?$data['program']:'';?>">
-      </div>
-    </div>
-    <div class="form-group">
-      <label class="control-label col-sm-2" for="on_going_term">On Going Term:</label>
-      <div class="col-sm-10">
-        <input type="text" class="form-control" id="on_going_term" placeholder="Enter on going term" name="on_going_term" value="<?=isset($data['ongoing_term'])?$data['ongoing_term']:'';?>">
+        <input type="text" class="form-control" id="phone" placeholder="Enter phone number" name="phone" value="<?=isset($data['phone'])?$data['phone']:'';?>">
       </div>
     </div>
     <div class="form-group">
@@ -60,5 +54,5 @@
 </div>
 
 <?php 
-  require_once('layout/footer.php');
+  require_once('footer.php');
 ?>

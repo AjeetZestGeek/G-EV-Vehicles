@@ -1,7 +1,7 @@
 <?php 
 require_once('header.php');
 require_once('db/addUserProcess.php');
-$sc = new signupConfig();
+$sc = new userConfig();
 $record = $sc->fetchAll();
 ?>
 <table class="table">
@@ -23,7 +23,7 @@ $record = $sc->fetchAll();
 		<tr>
 			<th scope="row"><?=++$sl;?></th>
 			<td><?=$value['username'];?></td>
-			<td><?=$value['name'];?></td>
+			<td><?=$value['phone'];?></td>
 			<td><?=$value['email'];?></td>
 			<td><?=$value['status'];?></td>
 			<td><a class="btn btn-warning" href="addUser.php?id=<?=$value['id'];?>&req=edit"><i class="glyphicon glyphicon-edit"></i></a>&nbsp<a class="btn btn-danger" href="?id=<?=$value['id'];?>&req=delete"><i class="glyphicon glyphicon-trash"></i></a></td>
@@ -32,5 +32,5 @@ $record = $sc->fetchAll();
 	</tbody>
 </table>
 <?php 
-require_once('layout/footer.php');
+require_once('footer.php');
 ?>
