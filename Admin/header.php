@@ -21,6 +21,7 @@
         <ul class="dropdown-menu">
           <li><a href="#">Role List</a></li>
           <li><a href="userlist.php">User List</a></li>
+          <li><a href="addUser.php">Add User</a></li>
         </ul>
       </li>
       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Blogs <span class="caret"></span></a>
