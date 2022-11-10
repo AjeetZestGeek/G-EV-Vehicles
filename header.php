@@ -23,19 +23,19 @@
             </div>
             <nav class="tm-nav" id="tm-nav">            
                 <ul>
-                    <li class="tm-nav-item"><a href="index.php" class="tm-nav-link">
+                    <li class="tm-nav-item" id="tm-home"><a href="index.php" class="tm-nav-link">
                         <i class="fas fa-home"></i>
                         Blog Home
                     </a></li>
-                    <li class="tm-nav-item active"><a href="post.php" class="tm-nav-link">
+                    <li class="tm-nav-item" id="tm-single-post"><a href="post.php" class="tm-nav-link">
                         <i class="fas fa-pen"></i>
                         Single Post
                     </a></li>
-                    <li class="tm-nav-item"><a href="about.php" class="tm-nav-link">
+                    <li class="tm-nav-item" id="tm-about-GEV"><a href="about.php" class="tm-nav-link">
                         <i class="fas fa-users"></i>
-                        About Xtra
+                        About Us
                     </a></li>
-                    <li class="tm-nav-item"><a href="contact.php" class="tm-nav-link">
+                    <li class="tm-nav-item" id="tm-contact-us"><a href="contact.php" class="tm-nav-link">
                         <i class="far fa-comments"></i>
                         Contact Us
                     </a></li>
