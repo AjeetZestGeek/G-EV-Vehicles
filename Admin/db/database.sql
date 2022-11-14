@@ -10,3 +10,6 @@ CREATE TABLE users(
 	created_date VARCHAR(255),
 	updated_date VARCHAR(255)
 );
+-- Admin Credential
+-- User name :- Tesla
+-- Password :- tesla@123

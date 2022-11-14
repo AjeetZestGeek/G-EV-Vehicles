@@ -1,5 +1,8 @@
 <?php
 session_start();
+if(!isset($_SESSION['user_data'])){
+  echo '<script>alert("Access Denied");window.location = "../index.php";</script>';
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">

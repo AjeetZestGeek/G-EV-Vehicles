@@ -22,16 +22,22 @@ if (isset($_POST['submit'])) {
 	$sc->setEmail($_POST['email']);
 	$sc->setPhone($_POST['phone']);
 	if($_POST['submit']=='save'){
-		if($_POST['pwd']==$_POST['conpwd']){
-			$sc->setPassword($_POST['pwd']);
+		if($_POST['pwd']==''||$_POST['conpwd']==''||$_POST['username']==''||$_POST['email']==''||$_POST['phone']==''){
 		}else{
-			$msg = "Password and Confirm Password are not matched";
-			header('Location:signup.php');
+			if($_POST['pwd']!=$_POST['conpwd']){
+				$msg = "Password and Confirm Password are not matched";
+			}else{
+				$sc->setPassword($_POST['pwd']);
+				$sc->insertData();
+			}
 		}
-		$sc->insertData();
 	}
 	if($_POST['submit']=='update'){
-		$sc->setId($_GET['id']);
-		$sc->update();
+		if($_POST['username']==''||$_POST['email']==''||$_POST['phone']==''){
+
+		}else{
+			$sc->setId($_GET['id']);
+			$sc->update();
+		}
 	}
 }

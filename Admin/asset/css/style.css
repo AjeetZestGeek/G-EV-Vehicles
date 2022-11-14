@@ -1,98 +1,98 @@
 label.control-label.col-sm-2 {
     text-align: left;
 }
-    .bg-drk-purple {
-            background-color: #fff;
-            padding: 16px 0px 12px 26px;
-            left: unset;
-            width: calc(100% - 250px);
-        }
+.bg-drk-purple {
+    background-color: #fff;
+    padding: 16px 0px 12px 26px;
+    left: unset;
+    width: calc(100% - 250px);
+}
 
-        .main-active .bg-drk-purple {
-            width: 100%;
+.main-active .bg-drk-purple {
+    width: 100%;
 
-        }
+}
 
-        .bg-drk-purple i {
-            font-size: 20px;
-            cursor: pointer;
-        }
+.bg-drk-purple i {
+    font-size: 20px;
+    cursor: pointer;
+}
 
-        .main .card {
-            border: none;
-            background-color: #d3f4ed;
-        }
+.main .card {
+    border: none;
+    background-color: #d3f4ed;
+}
 
-        
 
-        .sidebar-sticky .nav-item i {
-            margin-right: 7px;
-            font-size: 14px;
-        }
 
-        #sidebar.active {
-            position: absolute;
-            width: 100%;
-            max-width: 250px;
-            z-index: 5;
-        }
+.sidebar-sticky .nav-item i {
+    margin-right: 7px;
+    font-size: 14px;
+}
 
-        #sidebar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: 11;
-            height: 100vh;
-            width: 100%;
-            max-width: 0px;
-            background-color: #343a40;
-            transition: .4s;
-            overflow: hidden;
-        }
+#sidebar.active {
+    position: absolute;
+    width: 100%;
+    max-width: 250px;
+    z-index: 5;
+}
 
-        .slidebar .nav-item .nav-link {
-            color: #fff;
-        }
+#sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 11;
+    height: 100vh;
+    width: 100%;
+    max-width: 0px;
+    background-color: #343a40;
+    transition: .4s;
+    overflow: hidden;
+}
 
-        .main {
-            width: calc(100% - 250px);
-            margin-left: auto;
-            padding: 90px 12px 65px;
-            background-color: #f1f3f6;
-            transition: .4s;
-            height: 100vh;
-        }
+.slidebar .nav-item .nav-link {
+    color: #fff;
+}
 
-        .main-active {
-            width: 100%;
-        }
+.main {
+    width: calc(100% - 250px);
+    margin-left: auto;
+    padding: 90px 12px 65px;
+    background-color: #f1f3f6;
+    transition: .4s;
+    height: 100vh;
+}
 
-        .bd-placeholder-img {
-            font-size: 1.125rem;
-            text-anchor: middle;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-        }
+.main-active {
+    width: 100%;
+}
 
-        .full-visual .navbar-brand {
-            padding: 20px;
-            top: 0;
-            left: 0;
-            width: 250px;
-            margin: 0;
-            color: #fff;
-            z-index: 1030;
-        }
+.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
 
-        .color-deco {
-            color: #46cbb1;
-        }
+.full-visual .navbar-brand {
+    padding: 20px;
+    top: 0;
+    left: 0;
+    width: 250px;
+    margin: 0;
+    color: #fff;
+    z-index: 1030;
+}
 
-        .main .container {
-            max-width: 100%;
-        }
+.color-deco {
+    color: #46cbb1;
+}
+
+.main .container {
+    max-width: 100%;
+}
 .active {
   background-color: green;
   color: white;
@@ -126,16 +126,20 @@ button:focus {
   float: right;
   padding-right: 8px;
 }
+span.error-msg {
+    color: red;
+    font-size: 13px;
+}
 /*       media */ 
 
-        @media (max-width: 991px) {
-            #sidebar.active, .bg-drk-purple{
-                max-width: 200px;
-            }
-        }
+@media (max-width: 991px) {
+    #sidebar.active, .bg-drk-purple{
+        max-width: 200px;
+    }
+}
 
-        @media (min-width: 768px) {
-            .bd-placeholder-img-lg {
-                font-size: 3.5rem;
-            }
-        }
+@media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+    }
+}
