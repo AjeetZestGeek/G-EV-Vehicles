@@ -47,7 +47,8 @@
   <?php } ?>
     <div class="form-group">        
       <div class="col-sm-offset-2 col-sm-10">
-        <button type="submit" class="<?=$class;?>" name="submit" value="<?=$type;?>" class="btn btn-default"><?php if(!isset($_GET['id'])){ echo 'Submit';}else{echo 'Update';}?></button>
+        <button type="submit" class="<?=$class;?>" name="submit" value="<?=$type;?>"><?php if(!isset($_GET['id'])){ echo 'Submit';}else{echo 'Update';}?></button>
+        <a href="userlist.php"><button type="button" class="btn btn-danger" onclick="confirm('Are want to cancel ?')">Cancel</button></a>
       </div>
     </div>
   </form>

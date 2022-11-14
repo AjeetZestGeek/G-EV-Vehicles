@@ -1,5 +1,16 @@
 <?php 
 include 'header.php';
+include 'Admin/db/user-config.php';
+if(isset($_POST['login'])){
+    $obj = new userConfig();
+    $obj->setUsername($_POST['username']);
+    $obj->setPassword($_POST['password']);
+    if($obj->login()){
+        echo "<script>alert('Loged In Successfully');window.location = 'Admin/index.php';</script>";
+    }else{
+        echo "<script>alert('Username/Password wrong');window.location = 'login.php';</script>";
+    }
+}
 ?>
 <div class="col-12">
     <h2 class="tm-color-primary tm-post-title tm-mb-60">Login</h2>
@@ -20,7 +31,7 @@ include 'header.php';
         </div>
         <div class="form-group row text-right">
             <div class="col-12">
-                <button class="tm-btn tm-btn-primary tm-btn-small">Submit</button>                        
+                <button class="tm-btn tm-btn-primary tm-btn-small" name="login" id="btn-admin-login">Login</button>
             </div>                            
         </div>                                
     </form>

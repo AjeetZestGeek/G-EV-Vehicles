@@ -1,37 +1,67 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <title>G-EV-Vehicle</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+ 
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
   <link rel="stylesheet" href="asset/css/style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
+
 <body>
 
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="index.php">G-EV-Vehicle</a>
-    </div>
-    <ul class="nav navbar-nav">
-      <li class="active"><a href="index.php">Home</a></li>
-      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">User <span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><a href="#">Role List</a></li>
-          <li><a href="userlist.php">User List</a></li>
-          <li><a href="addUser.php">Add User</a></li>
-        </ul>
-      </li>
-      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Blogs <span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><a href="#">Category List</a></li>
-          <li><a href="#">Blog List</a></li>
-        </ul>
-      </li>
-      <li><a href="#">Logout</a></li>
-    </ul>
-  </div>
-</nav>
+<!-- Basic Sidebar -->
+  <div class="full-visual">
+        <aside class="slidebar active" id="sidebar">
+            <div class="sidebar-sticky">
+                <a class="navbar-brand" href="index.php">G EV Vehicles</a>
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+
+                        <a class="nav-link" href="index.php">
+                            <i class="fa fa-home" aria-hidden="true"></i>
+                            Dashboard
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                      <button class="dropdown-btn sidebar-drop"><i class="fa fa-users" aria-hidden="true"></i>Users
+                        <i class="fa fa-caret-down"></i>
+                      </button>
+                      <div class="dropdown-container">
+                        <a href="userlist.php">User List</a>
+                        <a href="addUser.php">Add Users</a>
+                      </div>
+                    </li>
+                    <li class="nav-item">
+                      <button class="dropdown-btn sidebar-drop"><i class="fa fa-blog" aria-hidden="true"></i>Blogs
+                        <i class="fa fa-caret-down"></i>
+                      </button>
+                      <div class="dropdown-container">
+                        <a href="blogCategory.php">Category</a>
+                        <a href="blogList.php">Blog List</a>
+                      </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            About Us
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+
+        <main class="main">
+            <nav class="navbar navbar-dark bg-drk-purple fixed-top flex-md-nowrap shadow justify-content-between">
+                <i class="fa fa-bars" aria-hidden="true"></i>
+                <ul class="navbar-nav px-3">
+                    <li class="nav-item text-nowrap">
+                        <a class="nav-link text-dark" href="db/logout.php">Logout</a>
+                    </li>
+                </ul>
+            </nav>

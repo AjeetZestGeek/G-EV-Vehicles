@@ -1,3 +1,141 @@
 label.control-label.col-sm-2 {
     text-align: left;
 }
+    .bg-drk-purple {
+            background-color: #fff;
+            padding: 16px 0px 12px 26px;
+            left: unset;
+            width: calc(100% - 250px);
+        }
+
+        .main-active .bg-drk-purple {
+            width: 100%;
+
+        }
+
+        .bg-drk-purple i {
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .main .card {
+            border: none;
+            background-color: #d3f4ed;
+        }
+
+        
+
+        .sidebar-sticky .nav-item i {
+            margin-right: 7px;
+            font-size: 14px;
+        }
+
+        #sidebar.active {
+            position: absolute;
+            width: 100%;
+            max-width: 250px;
+            z-index: 5;
+        }
+
+        #sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 11;
+            height: 100vh;
+            width: 100%;
+            max-width: 0px;
+            background-color: #343a40;
+            transition: .4s;
+            overflow: hidden;
+        }
+
+        .slidebar .nav-item .nav-link {
+            color: #fff;
+        }
+
+        .main {
+            width: calc(100% - 250px);
+            margin-left: auto;
+            padding: 90px 12px 65px;
+            background-color: #f1f3f6;
+            transition: .4s;
+            height: 100vh;
+        }
+
+        .main-active {
+            width: 100%;
+        }
+
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        .full-visual .navbar-brand {
+            padding: 20px;
+            top: 0;
+            left: 0;
+            width: 250px;
+            margin: 0;
+            color: #fff;
+            z-index: 1030;
+        }
+
+        .color-deco {
+            color: #46cbb1;
+        }
+
+        .main .container {
+            max-width: 100%;
+        }
+.active {
+  background-color: green;
+  color: white;
+}
+.sidebar-drop{
+        background: none;
+    color: white;
+    padding: 0.5rem 1rem;
+    width: 100%;
+    text-align: left;
+    border: none;
+}
+.dropdown-container a{
+    
+        padding: 15px;
+    color: white;
+}
+
+button:focus {
+    outline: none;
+}
+/* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+.dropdown-container {
+  display: none;
+  background-color: #262626;
+  padding-left: 8px;
+}
+
+/* Optional: Style the caret down icon */
+.fa-caret-down {
+  float: right;
+  padding-right: 8px;
+}
+/*       media */ 
+
+        @media (max-width: 991px) {
+            #sidebar.active, .bg-drk-purple{
+                max-width: 200px;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
