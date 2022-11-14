@@ -1,6 +1,5 @@
 <?php 
 require_once('database.php');
-
 /**
  * 
  */
@@ -129,5 +128,15 @@ class userConfig
 		}
 	}
 
-
+	public function login(){
+		try{
+			$stm = $this->con->prepare("SELECT * FROM users WHERE (username = ? OR email = ?) AND password = ?");
+			$stm->execute([$this->username,$this->username,$this->password]);
+			$_SESSION['user_data'] = $stm->fetchAll()[0];
+			return $stm->rowCount()==1;
+		}
+		catch(Exception $e){
+			return $e->getMessage();
+		}
+	}
 }
