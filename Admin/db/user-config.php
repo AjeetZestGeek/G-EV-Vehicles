@@ -132,8 +132,19 @@ class userConfig
 		try{
 			$stm = $this->con->prepare("SELECT * FROM users WHERE (username = ? OR email = ?) AND password = ?");
 			$stm->execute([$this->username,$this->username,$this->password]);
-			$_SESSION['user_data'] = $stm->fetchAll()[0];
-			return $stm->rowCount()==1;
+			$loginData = $stm->fetchAll()[0];
+			if($stm->rowCount()==1){
+				$idVerified = true;
+				if($loginData['status']==1){
+					$_SESSION['user_data'] = $loginData;
+					return true;
+				}else{
+					$idVerified = false;
+					return false;
+				}
+			}else{
+				return false;
+			}
 		}
 		catch(Exception $e){
 			return $e->getMessage();

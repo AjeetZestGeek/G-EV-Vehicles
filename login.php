@@ -8,7 +8,11 @@ if(isset($_POST['login'])){
     if($obj->login()){
         echo "<script>alert('Loged In Successfully');window.location = 'Admin/index.php';</script>";
     }else{
-        echo "<script>alert('Username/Password wrong');window.location = 'login.php';</script>";
+        if(isset($idVerified)&&!$idVerified){
+            echo "<script>alert('Your Id is not vrified!!!');window.location = 'login.php';</script>";
+        }else{
+            echo "<script>alert('Username/Password wrong');window.location = 'login.php';</script>";
+        }
     }
 }
 ?>
