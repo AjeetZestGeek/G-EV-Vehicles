@@ -1,6 +1,6 @@
 # G-EV-Vehicles
 ### Tesla Enterprises
-** How to setup **
+**How to setup**
 1. Go to htdocs via cmd in windows or vie trminal in linux or mac
 2. run command git clone https://github.com/AjeetZestGeek/G-EV-Vehicles.git 
 3. go to the folder cd G-EV-Vehicles/G-EV-Vehicles-main 
@@ -10,4 +10,4 @@
    press ctrl+x then enter to save.
 7. Now open file database.sql file run following command one by one in phpmyadmin to setup database
 8. Now you are ready to go
-* Important your default anmin username :- admintesla and password :- tesla@123 *
+* Important your default anmin username :- admintesla and password :- tesla@123 
