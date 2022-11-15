@@ -5,10 +5,15 @@ if(isset($_POST['login'])){
     $obj = new userConfig();
     $obj->setUsername($_POST['username']);
     $obj->setPassword($_POST['password']);
-    if($obj->login()){
+    $status = $obj->login();
+    if($status['state']&&$status['isVerified']){
         echo "<script>alert('Loged In Successfully');window.location = 'Admin/index.php';</script>";
     }else{
-        echo "<script>alert('Username/Password wrong');window.location = 'login.php';</script>";
+        if($status['state']){
+            echo "<script>alert('Your Id is not vrified!!!');window.location = 'login.php';</script>";
+        }else{
+            echo "<script>alert('Username/Password wrong');window.location = 'login.php';</script>";
+        }
     }
 }
 ?>

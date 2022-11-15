@@ -130,10 +130,22 @@ class userConfig
 
 	public function login(){
 		try{
+			$state = ['isVerified'=>false,'state'=>true];
 			$stm = $this->con->prepare("SELECT * FROM users WHERE (username = ? OR email = ?) AND password = ?");
 			$stm->execute([$this->username,$this->username,$this->password]);
-			$_SESSION['user_data'] = $stm->fetchAll()[0];
-			return $stm->rowCount()==1;
+			$loginData = $stm->fetchAll()[0];
+			if($stm->rowCount()==1){
+				if($loginData['status']==1){
+					$_SESSION['user_data'] = $loginData;
+					$state['isVerified'] = true;
+					return $state;
+				}else{
+					return $state;
+				}
+			}else{
+				$state['state'] = false;
+				return $state;
+			}
 		}
 		catch(Exception $e){
 			return $e->getMessage();
