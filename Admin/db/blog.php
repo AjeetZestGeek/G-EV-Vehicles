@@ -150,4 +150,15 @@ class blog
 			return $e->getMessage();
 		}
 	}
+
+	public function changeStatus(){
+		try{
+			$stm = $this->con->prepare("UPDATE blog_post set status = ? WHERE id = ?");
+			$stm->execute([$this->status,$this->id]);
+			echo "<script>document.location = 'bloglist.php'</script>";
+		}
+		catch(Exception $e){
+			return $e->getMessage();
+		}
+	}
 }
