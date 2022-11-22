@@ -7,11 +7,11 @@
 ?>
   
 <div class="container">
-  <h2><?php if(isset($_GET['id'])){ echo 'Update';}else{echo 'Add';}?> Blog</h2>
   <form class="form-horizontal" action="" method="post">
+      <h2 class="mb-3"><?php if(isset($_GET['id'])){ echo 'Update';}else{echo 'Add';}?> Blog</h2>
     <input type="hidden" name="user_id" value="<?=$userdata['id']?>">
-    <div class="form-group">
-      <label class="control-label col-sm-2" for="category_id">Category:</label>
+    <div class="form-group d-flex align-items-center">
+      <label class="control-label col-sm-2" for="category_id">Category: <span class="text-danger">*</span></label>
       <div class="col-sm-10">
       	<select class="form-control" name="category_id" aria-label="select">
           <?php 
@@ -24,24 +24,24 @@
       </div>
     </div>
 
-    <div class="form-group">
-      <label class="control-label col-sm-2" for="title">Title:</label>
+    <div class="form-group d-flex align-items-center">
+      <label class="control-label col-sm-2" for="title">Title: <span class="text-danger">*</span></label>
       <div class="col-sm-10">
         <input type="text" class="form-control" id="title" placeholder="Enter title" name="title" value="<?=isset($data['title'])?$data['title']:'';?>">
         <span class="error-msg"><?=(isset($sc)&&($sc->getTitle()=='')?'Please fill title':'');?></span>
       </div>
     </div>
 
-    <div class="form-group">
-      <label class="control-label col-sm-2" for="content">content:</label>
+    <div class="form-group d-flex align-items-center">
+      <label class="control-label col-sm-2" for="content">Content: <span class="text-danger">*</span></label>
       <div class="col-sm-10">
         <textarea class="form-control form-control-lg" id="content" name="content"><?=isset($data['content'])?$data['content']:'';?></textarea>
         <span class="error-msg"><?=(isset($sc)&&($sc->getContent()=='')?'Please fill content':'');?></span>
       </div>
     </div>
 
-    <div class="form-group">
-      <label class="control-label col-sm-2" for="image">Image:</label>
+    <div class="form-group d-flex align-items-center">
+      <label class="control-label col-sm-2" for="image">Image: <span class="text-danger">*</span></label>
       <div class="col-sm-10">
         <input type="file" class="form-control-file" id="image" placeholder="Enter image name" name="image" value="<?=isset($data['image'])?$data['image']:'';?>">
         <span class="error-msg"><?=(isset($sc)&&($sc->getImage()=='')?'Please choose image':'');?></span>

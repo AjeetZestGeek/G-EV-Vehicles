@@ -4,6 +4,18 @@ require_once('db/blog-process.php');
 $sc = new blog();
 $record = $sc->fetchAll();
 ?>
+<div class="row align-items-center main-row-sec">
+	<div class="col-md-6"> 
+		<div class="blog-list"> 
+			<h5>Blog List</h5>
+		</div>
+	</div>
+	<div class="col-md-6"> 
+		<div class="blog-btn">	
+			<a href="addBlog.php" class="btn btn-primary">Add</a>
+		</div>
+	</div>
+</div>
 <table class="table">
 	<thead>
 		<tr>

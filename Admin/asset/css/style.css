@@ -130,6 +130,28 @@ span.error-msg {
     color: red;
     font-size: 13px;
 }
+.form-horizontal {
+    background: #fff;
+    padding: 20px;
+}
+.main-row-sec {
+    margin: 0px 0px 10px 0px;
+    background: #73a2d5;
+    padding: 8px 0px;
+}
+.blog-list h5 {
+    margin-bottom: 0;
+    color: #fff;
+}
+.table {
+   background-color: #fff;
+}
+.table td, .table th {
+   vertical-align: middle;
+}
+.blog-btn {
+    text-align: right;
+}
 /*       media */ 
 
 @media (max-width: 991px) {
