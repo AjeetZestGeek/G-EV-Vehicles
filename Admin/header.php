@@ -41,7 +41,6 @@ if(!isset($_SESSION['user_data'])){
                       </button>
                       <div class="dropdown-container">
                         <a href="userlist.php">User List</a>
-                        <a href="addUser.php">Add Users</a>
                       </div>
                     </li>
                     <li class="nav-item">
@@ -50,9 +49,7 @@ if(!isset($_SESSION['user_data'])){
                       </button>
                       <div class="dropdown-container">
                         <a href="blogCategory.php">Category</a>
-                        <a href="addCategory.php">Add Category</a>
-                        <a href="blogList.php">Blog List</a>
-                        <a href="addBlog.php">Add Blog</a>
+                        <a href="blogList.php">Blog</a>
                       </div>
                     </li>
                     <li class="nav-item">

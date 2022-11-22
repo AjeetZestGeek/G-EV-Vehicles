@@ -4,6 +4,18 @@ require_once('db/category-process.php');
 $sc = new category();
 $record = $sc->fetchAll();
 ?>
+<div class="row align-items-center main-row-sec">
+	<div class="col-md-6"> 
+		<div class="blog-list"> 
+			<h5>Category List</h5>
+		</div>
+	</div>
+	<div class="col-md-6"> 
+		<div class="blog-btn">	
+			<a href="addCategory.php" class="btn btn-primary">Add</a>
+		</div>
+	</div>
+</div>
 <table class="table">
 	<thead>
 		<tr>
