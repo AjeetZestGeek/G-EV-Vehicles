@@ -14,3 +14,54 @@ INSERT INTO `users` (`id`, `username`, `email`, `phone`, `password`, `status`, `
 -- Admin Credential
 -- User name :- admintesla
 -- Password :- tesla@123
+CREATE TABLE blog_categary(
+	id BIGINT PRIMARY KEY AUTO_INCREMENT,
+	title VARCHAR(255) UNIQUE,
+	status int(6),
+	created_by_id BIGINT,
+	created_date VARCHAR(255),
+	updated_date VARCHAR(255),
+	FOREIGN KEY (created_by_id) REFERENCES users(id)
+);
+
+CREATE TABLE blog_post(
+	id BIGINT PRIMARY KEY AUTO_INCREMENT,
+	category_id BIGINT(255),
+	title VARCHAR(255) UNIQUE,
+	content LONGTEXT,
+	image VARCHAR(255),
+	created_by_id BIGINT,
+	created_date VARCHAR(255),
+	updated_date VARCHAR(255),
+	status int(6),
+	FOREIGN KEY (category_id) REFERENCES blog_categary(id),
+	FOREIGN KEY (created_by_id) REFERENCES users(id)
+);
+
+CREATE TABLE blog_files(
+	id BIGINT PRIMARY KEY AUTO_INCREMENT,
+	blog_id BIGINT(255),
+	title VARCHAR(255) UNIQUE,
+	content LONGTEXT,
+	image VARCHAR(255),
+	created_by_id BIGINT,
+	created_date VARCHAR(255),
+	updated_date VARCHAR(255),
+	status int(6),
+	FOREIGN KEY (blog_id) REFERENCES blog_post(id),
+	FOREIGN KEY (created_by_id) REFERENCES users(id)
+);
+
+CREATE TABLE blog_comment(
+	id BIGINT PRIMARY KEY AUTO_INCREMENT,
+	blog_id BIGINT,
+	name VARCHAR(255),
+	email VARCHAR(255),
+	content LONGTEXT,
+	created_by_id BIGINT,
+	created_date VARCHAR(255),
+	updated_date VARCHAR(255),
+	status int(6),
+	FOREIGN KEY (blog_id) REFERENCES blog_post(id),
+	FOREIGN KEY (created_by_id) REFERENCES users(id)
+);
