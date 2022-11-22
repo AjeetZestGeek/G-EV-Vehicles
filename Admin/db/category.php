@@ -99,8 +99,13 @@ class category
 
 	public function delete(){
 		try{
-			$stm = $this->con->prepare("DELETE  FROM blog_categary WHERE id = ?");
+			echo "<script>if(!confirm('It will delete all the post related to this category')){document.location = 'blogCategory.php'};</script>";
+
+			$deletePost = $this->con->prepare("DELETE FROM blog_post WHERE category_id = ?");
+			$deletePost->execute([$this->id]);
+			$stm = $this->con->prepare("DELETE FROM blog_categary WHERE id = ?");
 			$stm->execute([$this->id]);
+
 			return $stm->fetchAll();
 			echo "<script>alert('Data deleted successfully');document.location = 'blogCategory.php'</script>";
 		}
@@ -114,6 +119,17 @@ class category
 			$stm = $this->con->prepare("SELECT username FROM blog_categary JOIN users ON blog_categary.created_by_id = users.id WHERE blog_categary.id = ?");
 			$stm->execute([$this->id]);
 			return $stm->fetchAll()[0];
+		}
+		catch(Exception $e){
+			return $e->getMessage();
+		}
+	}
+
+	public function changeStatus(){
+		try{
+			$stm = $this->con->prepare("UPDATE blog_categary set status = ? WHERE id = ?");
+			$stm->execute([$this->status,$this->id]);
+			echo "<script>document.location = 'blogCategory.php'</script>";
 		}
 		catch(Exception $e){
 			return $e->getMessage();

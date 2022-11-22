@@ -17,10 +17,24 @@ label.control-label.col-sm-2 {
     font-size: 20px;
     cursor: pointer;
 }
-
+.class-main {
+    padding: 20px;
+    background-color: #fff;
+}
+.large-con span {
+    color: grey;
+    font-size: 17px;
+    font-weight: 300;
+}
 .main .card {
     border: none;
     background-color: #d3f4ed;
+}
+.card-main-box img {
+    max-width: 300px;
+}
+.content-box {
+    padding: 0px 15px;
 }
 
 

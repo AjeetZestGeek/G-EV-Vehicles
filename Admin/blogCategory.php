@@ -41,8 +41,8 @@ $record = $sc->fetchAll();
 				  $username = $cb->fetchCreatedBy()['username'];
 			?>
 			<td><?=$username;?></td>
-			<td><a class="btn btn-<?=$value['status']==0?'primary':'warning';?>" href="?id=<?=$value['id'];?>&req=update-status&val=<?=$value['status']==0?1:0;?>"><?=$value['status']==0?'Activate':'Block';?></a></td>
-			<td><a class="btn btn-warning" href="addCategory.php?id=<?=$value['id'];?>&req=edit"><i class="fa fa-edit"></i></a>&nbsp<a class="btn btn-danger" href="?id=<?=$value['id'];?>&req=delete"><i class="fa fa-trash"></i></a></td>
+			<td><a class="btn btn-<?=$value['status']==0?'primary':'warning';?>" href="?page=category&id=<?=$value['id'];?>&req=update-status&val=<?=$value['status']==0?1:0;?>"><?=$value['status']==0?'Activate':'Block';?></a></td>
+			<td><a class="btn btn-warning" href="addCategory.php?page=category&id=<?=$value['id'];?>&req=edit"><i class="fa fa-edit"></i></a>&nbsp<a class="btn btn-danger" href="?page=category&id=<?=$value['id'];?>&req=delete"><i class="fa fa-trash"></i></a></td>
 		</tr>
 	<?php } ?>
 	</tbody>

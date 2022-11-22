@@ -7,7 +7,7 @@
 ?>
   
 <div class="container">
-  <form class="form-horizontal" action="" method="post">
+  <form class="form-horizontal" action="" method="post" enctype="multipart/form-data">
       <h2 class="mb-3"><?php if(isset($_GET['id'])){ echo 'Update';}else{echo 'Add';}?> Blog</h2>
     <input type="hidden" name="user_id" value="<?=$userdata['id']?>">
     <div class="form-group d-flex align-items-center">
