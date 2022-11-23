@@ -3,8 +3,8 @@
   require_once('db/category-process.php');
   require_once('db/blog-process.php');
   $sc = new blog();
-  $sc->setId($_GET['id']
-  	$data = $sc->fetchOne()[0];
+  $sc->setId($_GET['id']);
+  $data = $sc->fetchOne()[0];
 ?>
 
 <div class="row justify-content-center">
