@@ -42,7 +42,7 @@ $record = $sc->fetchAll();
 			?>
 			<td><?=$username;?></td>
 			<td><a class="btn btn-<?=$value['status']==0?'primary':'warning';?>" href="?page=category&id=<?=$value['id'];?>&req=update-status&val=<?=$value['status']==0?1:0;?>"><?=$value['status']==0?'Activate':'Block';?></a></td>
-			<td><a class="btn btn-warning" href="addCategory.php?page=category&id=<?=$value['id'];?>&req=edit"><i class="fa fa-edit"></i></a>&nbsp<a class="btn btn-danger" href="?page=category&id=<?=$value['id'];?>&req=delete"><i class="fa fa-trash"></i></a></td>
+			<td><a class="btn btn-warning" href="addCategory.php?page=category&id=<?=$value['id'];?>&req=edit"><i class="fa fa-edit"></i></a>&nbsp<a onclick="if (!confirm('It will delete all the post related to this category')){event.stopPropagation(); event.preventDefault();}" class="btn btn-danger" href="?page=category&id=<?=$value['id'];?>&req=delete"><i class="fa fa-trash"></i></a></td>
 		</tr>
 	<?php } ?>
 	</tbody>

@@ -88,7 +88,7 @@ class blog
 			$stm = $this->con->prepare("INSERT INTO blog_post(title,content,category_id,image,status,created_date,created_by_id)VALUES(?,?,?,?,?,?,?)");
 			$stm->execute([$this->title,$this->content,$this->category_id,$this->image,$this->status,date('Y-m-d h:t:s'),$this->created_by_id]);
 			// echo '<pre>';print_r($stm);die;
-			echo "<script>alert('Data saved successfully');document.location = 'bloglist.php'</script>";
+			echo "<script>document.location = 'bloglist.php'</script>";
 		}
 		catch(Exception $e){
 			return $e->getMessage();
@@ -121,7 +121,7 @@ class blog
 		try{
 			$stm = $this->con->prepare("UPDATE blog_post set title = ?,content = ?,category_id = ?, image = ?, updated_date = ? WHERE id = ?");
 			$stm->execute([$this->title,$this->content,$this->category_id,$this->image,date('Y-m-d h:t:s'),$this->id]);
-			echo "<script>alert('Data updated successfully');document.location = 'bloglist.php'</script>";
+			echo "<script>document.location = 'bloglist.php'</script>";
 		}
 		catch(Exception $e){
 			return $e->getMessage();
@@ -133,7 +133,7 @@ class blog
 			$stm = $this->con->prepare("DELETE  FROM blog_post WHERE id = ?");
 			$stm->execute([$this->id]);
 			return $stm->fetchAll();
-			echo "<script>alert('Data deleted successfully');document.location = 'bloglist.php'</script>";
+			echo "<script>document.location = 'bloglist.php'</script>";
 		}
 		catch(Exception $e){
 			return $e->getMessage();

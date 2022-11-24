@@ -11,7 +11,7 @@
 	<div class="col-md-6">
 		<div class="class-main justify-content-center">
 		<div class="card-main-box d-flex">
-			<img src="https://gadgetsalerts.wiki/assets/images/apple_watch.jfif" class="w-100">
+			<img src="<?=$data['image'];?>" class="w-100">
 			<div class="content-box large-con">
 				<h6>Created At:<span><?=$data['created_date'];?></span></h6>
 				<h6>Created By:<span>Admin</span></h6>
