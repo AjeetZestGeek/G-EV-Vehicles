@@ -40,7 +40,7 @@ $record = $sc->fetchAll();
 			<td><a href="blogView.php?id=<?=$value['id'];?>&title=<?=$value['title'];?>"><?=$value['title'];?></a></td>
 			<td><?=$value['category_id'];?></td>
 			<!-- <td></?=$value['content'];?></td> -->
-			<td><a href="blogView.php?id=<?=$value['id'];?>&title=<?=$value['title'];?>"><img src="<?=$value['image'];?>"></a></td>
+			<td><a href="blogView.php?id=<?=$value['id'];?>&title=<?=$value['title'];?>"><img src="<?=$value['image'];?>"  width="150px" height="80"></a></td>
 			<td><?=$value['created_date'];?></td>
 			<?php $cb = new blog(); 
 				  $cb->setId($value['id']);
@@ -50,7 +50,7 @@ $record = $sc->fetchAll();
 			<!-- Status -->
 			<td><a class="btn btn-<?=$value['status']==0?'primary':'warning';?>" href="?id=<?=$value['id'];?>&req=update-status&val=<?=$value['status']==0?1:0;?>"><?=$value['status']==0?'Activate':'Block';?></a></td>
 			<!-- Action -->
-			<td><a class="btn btn-warning" href="addBlog.php?page=blog&id=<?=$value['id'];?>&req=edit"><i class="fa fa-edit"></i></a>&nbsp<a class="btn btn-danger" href="?id=<?=$value['id'];?>&req=delete"><i class="fa fa-trash"></i></a></td>
+			<td><a class="btn btn-warning" href="addBlog.php?page=blog&id=<?=$value['id'];?>&req=edit"><i class="fa fa-edit"></i></a>&nbsp<a onclick="if (!confirm('Are you sure to delete ?')){event.stopPropagation(); event.preventDefault();}" class="btn btn-danger" href="?id=<?=$value['id'];?>&req=delete"><i class="fa fa-trash"></i></a></td>
 		</tr>
 	<?php } ?>
 	</tbody>

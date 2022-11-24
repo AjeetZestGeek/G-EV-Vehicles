@@ -57,7 +57,7 @@ class category
 		try{
 			$stm = $this->con->prepare("INSERT INTO blog_categary(title,status,created_date,created_by_id)VALUES(?,?,?,?)");
 			$stm->execute([$this->title,$this->status,date('Y-m-d h:t:s'),$this->created_by_id]);
-			echo "<script>alert('Data saved successfully');document.location = 'blogCategory.php'</script>";
+			echo "<script>document.location = 'blogCategory.php'</script>";
 		}
 		catch(Exception $e){
 			return $e->getMessage();
@@ -90,7 +90,7 @@ class category
 		try{
 			$stm = $this->con->prepare("UPDATE blog_categary set title = ?, updated_date = ? WHERE id = ?");
 			$stm->execute([$this->title,date('Y-m-d h:t:s'),$this->id]);
-			echo "<script>alert('Data updated successfully');document.location = 'blogCategory.php'</script>";
+			echo "<script>document.location = 'blogCategory.php'</script>";
 		}
 		catch(Exception $e){
 			return $e->getMessage();
@@ -99,15 +99,13 @@ class category
 
 	public function delete(){
 		try{
-			echo "<script>if(!confirm('It will delete all the post related to this category')){document.location = 'blogCategory.php'};</script>";
-
 			$deletePost = $this->con->prepare("DELETE FROM blog_post WHERE category_id = ?");
 			$deletePost->execute([$this->id]);
 			$stm = $this->con->prepare("DELETE FROM blog_categary WHERE id = ?");
 			$stm->execute([$this->id]);
 
 			return $stm->fetchAll();
-			echo "<script>alert('Data deleted successfully');document.location = 'blogCategory.php'</script>";
+			echo "<script>document.location = 'blogCategory.php'</script>";
 		}
 		catch(Exception $e){
 			return $e->getMessage();

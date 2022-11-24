@@ -38,7 +38,7 @@ $record = $sc->fetchAll();
 			<td><?=$value['phone'];?></td>
 			<td><?=$value['email'];?></td>
 			<td><a class="btn btn-<?=$value['status']==0?'primary':'warning';?>" href="addUser.php?id=<?=$value['id'];?>&req=edit"><?=$value['status']==0?'Activate':'Block';?></a></td>
-			<td><a class="btn btn-warning" href="addUser.php?id=<?=$value['id'];?>&req=edit"><i class="fa fa-edit"></i></a>&nbsp<a class="btn btn-danger" href="?id=<?=$value['id'];?>&req=delete"><i class="fa fa-trash"></i></a></td>
+			<td><a class="btn btn-warning" href="addUser.php?id=<?=$value['id'];?>&req=edit"><i class="fa fa-edit"></i></a>&nbsp<a onclick="if (!confirm('It will delete all the data related to this user')){event.stopPropagation(); event.preventDefault();}" class="btn btn-danger" href="?id=<?=$value['id'];?>&req=delete"><i class="fa fa-trash"></i></a></td>
 		</tr>
 	<?php } ?>
 	</tbody>
