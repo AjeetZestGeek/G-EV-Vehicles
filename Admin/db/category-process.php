@@ -16,7 +16,7 @@ if (isset($_GET['id'])&&isset($_GET['req'])&&isset($_GET['page'])&&$_GET['page']
 		$data = $sc->delete();
 	}
 	if($_GET['req']=='update-status'){
-		$sc = new blog();
+		$sc = new category();
 		$sc->setId($_GET['id']);
 		$sc->setStatus($_GET['val']);
 		$data = $sc->changeStatus();

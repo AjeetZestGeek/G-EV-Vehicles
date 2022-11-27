@@ -2,8 +2,8 @@
 require_once('blog.php');
 $type = 'save';
 $class = 'btn btn-primary';
-if (isset($_GET['id'])&&isset($_GET['req'])) {
-	if($_GET['req']=='edit'&&$_GET['page']=='blog'){
+if (isset($_GET['id'])&&isset($_GET['req'])&&isset($_GET['page'])&&$_GET['page']=='blog') {
+	if($_GET['req']=='edit'){
 		$type = 'update';
 		$class = 'btn btn-warning';
 		$sc = new blog();

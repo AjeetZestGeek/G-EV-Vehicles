@@ -87,7 +87,6 @@ class blog
 		try{
 			$stm = $this->con->prepare("INSERT INTO blog_post(title,content,category_id,image,status,created_date,created_by_id)VALUES(?,?,?,?,?,?,?)");
 			$stm->execute([$this->title,$this->content,$this->category_id,$this->image,$this->status,date('Y-m-d h:t:s'),$this->created_by_id]);
-			// echo '<pre>';print_r($stm);die;
 			echo "<script>document.location = 'bloglist.php'</script>";
 		}
 		catch(Exception $e){
@@ -95,11 +94,24 @@ class blog
 		}
 	}
 
-	public function fetchAll(){
+	public function fetchAll($pageno=0,$cat=''){
 		try{
-			$stm = $this->con->prepare("SELECT * FROM blog_post");
+			$limit = 4;
+			$offset = ($pageno-1)*$limit;
+			$sql = "SELECT bp.id as blog_id, bp.title as blog_title, content, image, bp.created_by_id as blog_craated_by_id, bp.created_date as blog_created_date, bp.status as blog_status, bc.title as category_title FROM blog_post as bp JOIN blog_categary as bc ON bp.category_id = bc.id";
+			if($cat!=''){
+				$sql .= " WHERE bp.category_id = $cat";
+			}
+
+			if($pageno!=0){
+				$paginatedSql = $sql . " LIMIT $limit OFFSET $offset";
+				$stmPagi = $this->con->prepare($paginatedSql);
+				$stmPagi->execute();
+			}
+			$stm = $this->con->prepare($sql);
 			$stm->execute();
-			return $stm->fetchAll();
+
+			return ['data'=>$stmPagi->fetchAll(),'total-page'=>ceil($stm->rowCount()/$limit)];
 		}
 		catch(Exception $e){
 			return $e->getMessage();
