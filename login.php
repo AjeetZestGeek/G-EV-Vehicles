@@ -7,7 +7,7 @@ if(isset($_POST['login'])){
     $obj->setPassword($_POST['password']);
     $status = $obj->login();
     if($status['state']&&$status['isVerified']){
-        echo "<script>alert('Loged In Successfully');window.location = 'Admin/index.php';</script>";
+        echo "<script>window.location = 'Admin/index.php';</script>";
     }else{
         if($status['state']){
             echo "<script>alert('Your Id is not vrified!!!');window.location = 'login.php';</script>";

@@ -2,7 +2,7 @@
 require_once('user-config.php');
 $type = 'save';
 $class = 'btn btn-primary';
-if (isset($_GET['id'])&&isset($_GET['req'])) {
+if (isset($_GET['id'])&&isset($_GET['req'])&&isset($_GET['page'])&&$_GET['page']=='user') {
 	if($_GET['req']=='edit'){
 		$type = 'update';
 		$class = 'btn btn-warning';
@@ -14,6 +14,12 @@ if (isset($_GET['id'])&&isset($_GET['req'])) {
 		$sc = new userConfig();
 		$sc->setId($_GET['id']);
 		$data = $sc->delete();
+	}
+	if($_GET['req']=='update-status'){
+		$sc = new userConfig();
+		$sc->setId($_GET['id']);
+		$sc->setStatus($_GET['val']);
+		$data = $sc->changeStatus();
 	}
 }
 if (isset($_POST['submit'])) {
