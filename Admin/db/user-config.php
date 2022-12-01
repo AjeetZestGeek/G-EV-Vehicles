@@ -57,7 +57,7 @@ class userConfig
 	}
 
 	public function setPassword($password){
-		$this->password = md5('te'.md5($password).'sla');
+		$this->password = md5(md5(md5($password).'te').md5(md5($password).'sla').md5($password));
 	}
 
 	public function getPassword(){
