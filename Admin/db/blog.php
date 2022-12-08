@@ -94,13 +94,17 @@ class blog
 		}
 	}
 
-	public function fetchAll($pageno=0,$cat=''){
+	public function fetchAll($pageno=1,$cat='',$query=''){
 		try{
 			$limit = 4;
 			$offset = ($pageno-1)*$limit;
 			$sql = "SELECT bp.id as blog_id, bp.title as blog_title, content, image, bp.created_by_id as blog_craated_by_id, bp.created_date as blog_created_date, bp.status as blog_status, bc.title as category_title, username FROM blog_post as bp JOIN blog_categary as bc ON bp.category_id = bc.id JOIN users as u ON bp.created_by_id = u.id";
 			if($cat!=''){
 				$sql .= " WHERE bp.category_id = $cat";
+			}
+
+			if($query!=''){
+				$sql .= " AND (bp.title LIKE '%$query%' OR bp.created_date LIKE '%$query%' OR bc.title LIKE '%$query%' OR u.username LIKE '%$query%')";
 			}
 
 			if($pageno!=0){

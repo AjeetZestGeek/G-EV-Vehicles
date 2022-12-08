@@ -3,6 +3,8 @@ include 'header.php';
 $postObj = new blog();
 if(isset($_GET['catId'])){
     $records = $postObj->fetchAll(1,$_GET['catId']);
+}else if($_GET['query']){
+    $records = $postObj->fetchAll(1,'',$_GET['query']);
 }else{
     $records = $postObj->fetchAll(1);
 }
