@@ -53,8 +53,7 @@ $cats = $catObj->fetchAll();
 			<th scope="row"><a href="blogView.php?id=<?=$value['blog_id'];?>&title=<?=$value['title'];?>"><?=++$sl;?></a></th>
 			<td><a href="blogView.php?id=<?=$value['blog_id'];?>&title=<?=$value['blog_title'];?>"><?=$value['blog_title'];?></a></td>
 			<td><?=$value['category_title'];?></td>
-			<!-- <td></?=$value['content'];?></td> -->
-			<td><a href="blogView.php?id=<?=$value['blog_id'];?>&title=<?=$value['blog_title'];?>"><img src="<?=$value['image'];?>"  width="150px" height="80"></a></td>
+			<td><a href="blogView.php?id=<?=$value['blog_id'];?>&title=<?=$value['blog_title'];?>"><img src="<?=$value['image'];?>"></a></td>
 			<td><?=$value['blog_created_date'];?></td>
 			<?php $cb = new blog(); 
 				  $cb->setId($value['blog_id']);

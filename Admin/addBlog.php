@@ -43,7 +43,8 @@
     <div class="form-group d-flex align-items-center">
       <label class="control-label col-sm-2" for="image">Image: <span class="text-danger">*</span></label>
       <div class="col-sm-10">
-        <input type="file" class="form-control-file" id="image" placeholder="Enter image name" name="image" value="<?=isset($data['image'])?$data['image']:'';?>">
+        <input type="file" class="form-control-file" id="image" placeholder="Enter image name" name="image">
+        <input type="hidden" name="old-image" value="<?=isset($data['image'])?$data['image']:'';?>">
         <span class="error-msg"><?=(isset($sc)&&($sc->getImage()=='')?'Please choose image':'');?></span>
       </div>
     </div>

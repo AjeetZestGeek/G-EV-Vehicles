@@ -1,5 +1,8 @@
 <?php
 session_start();
+include 'Admin/db/blog-process.php';
+include 'Admin/db/category-process.php';
+include 'Admin/db/comment-process.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -30,10 +33,10 @@ session_start();
                         <i class="fas fa-home"></i>
                         Blog Home
                     </a></li>
-                    <li class="tm-nav-item" id="tm-single-post"><a href="post.php" class="tm-nav-link">
+                    <!-- <li class="tm-nav-item" id="tm-single-post"><a href="post.php" class="tm-nav-link">
                         <i class="fas fa-pen"></i>
                         Single Post
-                    </a></li>
+                    </a></li> -->
                     <li class="tm-nav-item" id="tm-about-GEV"><a href="about.php" class="tm-nav-link">
                         <i class="fas fa-users"></i>
                         About Us
