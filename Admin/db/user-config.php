@@ -57,7 +57,7 @@ class userConfig
 	}
 
 	public function setPassword($password){
-		$this->password = md5(md5(md5($password).'te').md5(md5($password).'sla').md5($password));
+		$this->password = $password;
 	}
 
 	public function getPassword(){
@@ -75,7 +75,7 @@ class userConfig
 	public function insertData(){
 		try{
 			$stm = $this->con->prepare("INSERT INTO users(phone,username,email,password,status)VALUES(?,?,?,?,?)");
-			$stm->execute([$this->phone,$this->username,$this->email,$this->password,$this->status]);
+			$stm->execute([$this->phone,$this->username,$this->email,password_hash($this->password),$this->status]);
 			echo "<script>document.location = 'userlist.php'</script>";
 		}
 		catch(Exception $e){
@@ -142,10 +142,10 @@ class userConfig
 	public function login(){
 		try{
 			$state = ['isVerified'=>false,'state'=>true];
-			$stm = $this->con->prepare("SELECT * FROM users WHERE (username = ? OR email = ?) AND password = ?");
-			$stm->execute([$this->username,$this->username,$this->password]);
+			$stm = $this->con->prepare("SELECT * FROM users WHERE (username = ? OR email = ?)");
+			$stm->execute([$this->username,$this->username]);
 			$loginData = $stm->fetchAll()[0];
-			if($stm->rowCount()==1){
+			if(password_verify($this->password, $loginData['password'])){
 				if($loginData['status']==1){
 					$_SESSION['user_data'] = $loginData;
 					$state['isVerified'] = true;

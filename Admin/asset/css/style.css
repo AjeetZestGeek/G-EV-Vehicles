@@ -166,6 +166,12 @@ span.error-msg {
 .blog-btn {
     text-align: right;
 }
+.card-main-box.d-flex {
+    position: relative;
+}
+button#alex-image-delete {
+    position: absolute;
+}
 /*       media */ 
 
 @media (max-width: 991px) {

@@ -17,7 +17,7 @@
           <?php 
           foreach ($record as $key => $value) { 
           ?>
-          <option value="<?=$value['id'];?>" <?=isset($data['category_id'])&&$data['category_id']==$value['id']?'selected':'';?>><?=$value['title'];?></option>
+          <option value="<?=$value['id'];?>" <?=isset($data['blog_category_id'])&&$data['blog_category_id']==$value['id']?'selected':'';?>><?=$value['cat_title'];?></option>
         <?php } ?>
         </select>
         <span class="error-msg"><?=(isset($sc)&&($sc->getCategoryId()=='')?'Please select category':'');?></span>
@@ -27,7 +27,7 @@
     <div class="form-group d-flex align-items-center">
       <label class="control-label col-sm-2" for="title">Title: <span class="text-danger">*</span></label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" id="title" placeholder="Enter title" name="title" value="<?=isset($data['title'])?$data['title']:'';?>">
+        <input type="text" class="form-control" id="title" placeholder="Enter title" name="title" value="<?=isset($data['title'])?$data['blog_title']:'';?>">
         <span class="error-msg"><?=(isset($sc)&&($sc->getTitle()=='')?'Please fill title':'');?></span>
       </div>
     </div>
