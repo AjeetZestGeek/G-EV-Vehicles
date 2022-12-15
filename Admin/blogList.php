@@ -50,7 +50,7 @@ $cats = $catObj->fetchAll();
 		foreach ($record as $key => $value) { 
 			?>
 		<tr>
-			<th scope="row"><a href="blogView.php?id=<?=$value['blog_id'];?>&title=<?=$value['title'];?>"><?=++$sl;?></a></th>
+			<th scope="row"><a href="blogView.php?id=<?=$value['blog_id'];?>&title=<?=$value['blog_title'];?>"><?=++$sl;?></a></th>
 			<td><a href="blogView.php?id=<?=$value['blog_id'];?>&title=<?=$value['blog_title'];?>"><?=$value['blog_title'];?></a></td>
 			<td><?=$value['category_title'];?></td>
 			<td><a href="blogView.php?id=<?=$value['blog_id'];?>&title=<?=$value['blog_title'];?>"><img src="<?=$value['image'];?>"></a></td>

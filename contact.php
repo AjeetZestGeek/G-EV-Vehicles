@@ -50,8 +50,7 @@ include 'header.php';
                 </div>
                 <div class="col-lg-5 tm-contact-right">
                     <address class="mb-4 tm-color-gray">
-                        120 Lorem ipsum dolor sit amet,
-                        consectetur adipiscing 10550
+                        WISYWIG Address
                     </address>
                     <span class="d-block">
                         Tel:

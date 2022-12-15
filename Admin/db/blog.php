@@ -124,7 +124,7 @@ class blog
 
 	public function fetchOne(){
 		try{
-			$stm = $this->con->prepare("SELECT bp.title as blog_title, content, image, bp.created_date as blog_created_date, username FROM blog_post as bp JOIN users as u ON bp.created_by_id = u.id WHERE bp.id = ?");
+			$stm = $this->con->prepare("SELECT bp.category_id as blog_category_id, bp.title as blog_title, content, image, bp.created_date as blog_created_date, username FROM blog_post as bp JOIN users as u ON bp.created_by_id = u.id WHERE bp.id = ?");
 			$stm->execute([$this->id]);
 			return $stm->fetchAll();
 		}

@@ -10,7 +10,7 @@ CREATE TABLE users(
 	created_date VARCHAR(255),
 	updated_date VARCHAR(255)
 );
-INSERT INTO `users` (`id`, `username`, `email`, `phone`, `password`, `status`, `created_date`, `updated_date`) VALUES (NULL, 'admintesla', 'admin@tesla.com', '+128765432109', 'a4f6278616b646fd1dc734070dbe4feb', '1', NULL, NULL);
+INSERT INTO `users` (`id`, `username`, `email`, `phone`, `password`, `status`, `created_date`, `updated_date`) VALUES (NULL, 'admintesla', 'admin@tesla.com', '+128765432109', '$2y$10$CwsSy22.eOmNR/tQcc1HB.WZnVgTla2.1IgymU1lpZ3nUBeEDd6lK', '1', NULL, NULL);
 -- Admin Credential
 -- User name :- admintesla
 -- Password :- tesla@123
